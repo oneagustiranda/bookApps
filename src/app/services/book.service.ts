@@ -15,4 +15,24 @@ export class BookService {
   getBook(id): Observable<Object> {
     return this.http.get(mainUrl + '/api/books/' + id);
   }
+  createBook(book): Observable<Object> {
+    return this.http.post(
+      mainUrl + '/api/books/', book
+    );
+  }
+  updateBook(id, book): Observable<Object> {
+    return this.http.put(
+      mainUrl + '/api/books/' + id, book
+    );
+  }
+  deleteBook(id): Observable<Object> {
+    return this.http.delete(
+      mainUrl + '/api/books/' + id
+    );
+  }
+  deleteBooks(): Observable<Object> {
+    return this.http.delete(
+      mainUrl + '/api/books/'
+    );
+  }
 }

@@ -12,4 +12,7 @@ export class BookService {
   getAllBooks(): Observable<Object> {
     return this.http.get(mainUrl + '/api/books');
   }
+  getBook(id): Observable<Object> {
+    return this.http.get(mainUrl + '/api/books/' + id);
+  }
 }

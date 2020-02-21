@@ -8,5 +8,8 @@ import { mainUrl } from './config';
 })
 export class BookService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+  getAllBooks(): Observable<Object> {
+    return this.http.get(mainUrl + '/api/books');
+  }
 }
